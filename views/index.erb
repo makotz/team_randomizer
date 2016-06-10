@@ -1,0 +1,23 @@
+<form action = "/" method = "post">
+  <h3>Names:</h3>
+  <textarea rows="5" cols=80% name="names" placeholder="E.g. Tam, Jacob"></textarea><br>
+  <h3>Method:</h3>
+  <input type="radio" name="method" value="team_count">
+  Team Count
+  <input type="radio" name="method" value="num_per_team">
+  Number Per Team<br>
+  <h3>Number:</h3>
+  <textarea rows="3" cols=80% name="number" placeholder="E.g. 3"></textarea><br>
+    <input type="submit" value="Make Teams">
+</form>
+
+<% if $hash %>
+<% $hash.each do |team, members| %>
+<div class="inline">
+<h4>Team <%= team %></h4>
+<% members.each do |member| %>
+  <%= member %><br>
+  <% end %>
+</div>
+<% end %>
+<% end %>
